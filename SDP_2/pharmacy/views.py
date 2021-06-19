@@ -91,7 +91,8 @@ def ContactPage(request):
         print(conform.data)
         if conform.is_valid():
             conform.save()
-            return render(request,"medcontact.html",{'feed':'Feedback Was Sent Successfully'})
+            return render(request,"medcontact.html",{'feed':'Feedback Was Sent Successfully','form':FeedbackForm()})
+
     return render(request,"medcontact.html",{'form':conform})
 
 def AboutPage(request):
@@ -117,7 +118,7 @@ def OrdersPage(request):
                 mn=request.POST.get('remove')
                 mname=mn.split(",")
                 print("remove")
-                re=MedicineOrder.objects.get(medicinename=mname[0],useremail=mname[1],email=request.session['email'])
+                re=MedicineOrder.objects.get(id=int(mname[0]))
                 re.delete()
                 orders=MedicineOrder.objects.filter(email=request.session['email'])
                 return render(request,"medorders.html",{'orders':orders,'success':'Successfully Deleted '})

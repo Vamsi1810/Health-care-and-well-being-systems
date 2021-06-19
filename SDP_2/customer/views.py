@@ -36,7 +36,8 @@ def ContactPage(request):
         print(conform.data)
         if conform.is_valid():
             conform.save()
-            return render(request,"cuscontact.html",{'feed':'Feedback Was Sent Successfully'})
+            return render(request,"cuscontact.html",{'feed':'Feedback Was Sent Successfully','form':FeedbackForm()})
+
     return render(request,"cuscontact.html",{'form':conform})
 
 def AboutPage(request):
@@ -78,7 +79,8 @@ def CusOrders(request):
     if request.method=="POST":
         rem=request.POST.get("remove")
         remove=rem.split(",")
-        ors=MedicineOrder.objects.get(medicinename=remove[0],email=remove[1],useremail=request.session['email'])
+        print(remove)
+        ors=MedicineOrder.objects.get(id=int(remove[0]))
         ors.delete()
         orders=MedicineOrder.objects.filter(useremail=request.session['email'])
         price=0

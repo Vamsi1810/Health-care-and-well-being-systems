@@ -78,11 +78,17 @@
                                             {{medicine.startprice}}
                                         </strike>&nbsp;&nbsp;&nbsp; {{medicine.endprice}}/-
                                         <br>
-                                        userLocation: {{medicine.userlocation}}
+                                        User Location: {{medicine.userlocation}}
+										<br>
+										Name : {{medicine.username}}
+										<br>
+										Contact : {{medicine.usermobile}}
+										<br>
+										Date ordered : {{medicine.date}}
                                     </p>
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="btn-group">
-                                            <button type="submit" name="remove" value="{{medicine.medicinename}},{{medicine.useremail}}" class="btn btn-sm btn-outline-secondary">Remove</button>
+                                            <button type="submit" name="remove" value="{{medicine.id}},{{medicine.useremail}}" class="btn btn-sm btn-outline-secondary">Remove</button>
                                             <!-- <button type="submit" name="path" value="{{medicine.medicinename}},{{medicine.useremail}}" class="btn btn-sm btn-outline-secondary b2">Path</button> -->
                                         </div>
                                     </div>

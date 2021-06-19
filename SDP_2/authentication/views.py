@@ -48,7 +48,8 @@ def ContactPage(request):
         print(conform.data)
         if conform.is_valid():
             conform.save()
-            return render(request,"contactus.html",{'feed':'Feedback Was Sent Successfully'})
+            return render(request,"contactus.html",{'feed':'Feedback Was Sent Successfully','form':FeedbackForm()})
+
     return render(request,"contactus.html",{'form':conform})
 
 def AboutPage(request):
