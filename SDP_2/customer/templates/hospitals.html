@@ -4,6 +4,12 @@
 Hospitals
 {% endblock %}
 {% block extra_style %}
+<head>
+	<link
+	  rel="stylesheet"
+	  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+	/>
+  </head>
 <style>
 	img {
 		margin: 20px;
@@ -32,7 +38,7 @@ Hospitals
 	.searchbut
 	{
 		width: 50px;
-		background-color: rgb(191, 204, 204);
+		/* background-color: rgb(191, 204, 204); */
 	}
 	@media (max-width: 992px) {
 		.cartdisplay {
@@ -57,7 +63,7 @@ Hospitals
 				{% csrf_token %}
 				<input type="text" class="form-control" name="search" placeholder="Search ......" aria-label="Recipient's username">
 				<div class="input-group-append">
-					<button class="searchbut" type="submit"><i class="fa fa-search"></i></button>
+					<button class="searchbut btn btn-warning" type="submit"><i class="fa fa-search place"></i></button>
 				</div>
 			</form>
 		</div>
@@ -70,7 +76,7 @@ Hospitals
 			<div class="cartdisplay">
 				{% if hospitals %}
 				{% for hospital in hospitals %}
-				<form class="card shadow-sm" action="{% url 'appointment' hospital.name %}" method="GET">
+				<form class="card shadow-sm animate__animated animate__slideInLeft" action="{% url 'appointment' hospital.name %}" method="GET">
 					<!-- {% csrf_token %} -->
 					<img class="image" src="{{hospital.image}}">
 					<div class="card-body">
