@@ -50,8 +50,7 @@ def DocContactPage(request):
         print(conform.data)
         if conform.is_valid():
             conform.save()
-            return render(request,"doccontact.html",{'feed':'Feedback Was Sent Successfully','form':FeedbackForm()})
-
+            return render(request,"doccontact.html",{'feed':'Feedback Was Sent Successfully'})
     return render(request,"doccontact.html",{'form':conform})
 
 def AboutPage(request):
@@ -119,37 +118,13 @@ def month_string_to_number(s):
     }
     return m[s]
 
-# def UpdateSlotPage(request,dt):
-#     if "update" in request.POST:
-#         sform=SlotForm(request.POST)
-#         print(sform.data['date'],"   ",sform.data['slot'],"  ",dt)
-#         try:
-#             s=Slot.objects.get(email=request.session['email'],location=request.session['location'],date=sform.data['date'],slot=sform.data['slot'])
-#             return render(request,'selectslot.html',{'form':sform,'error':'slot was booked already'})
-#         except:
-#             s=Slot(email=request.session['email'],location=request.session['location'],date=sform.data['date'],slot=sform.data['slot'])
-#             s.save()
-#             return render(request,'selectslot.html',{'form':sform,'success':'slot was booked successfully'})
-#         data=Slot.objects.filter(email=request.session['email'],date=dt)
-#         data.update(date=sform.data['date'],slot=sform.data['slot'])
-#         return redirect('slotslist')
-#     slot=request.POST.get('slot')
-#     print(dt,"  ",slot)
-#     sform=SlotForm(request.POST,initial={'slot':slot,'date':dt})
-#     return render(request,'updateslot.html',{'form':sform,'date':dt})
-
 def UpdateSlotPage(request,dt):
     if "update" in request.POST:
         sform=SlotForm(request.POST)
         print(sform.data['date'],"   ",sform.data['slot'],"  ",dt)
-        try:
-            s=Slot.objects.get(email=request.session['email'],location=request.session['location'],date=sform.data['date'],slot=sform.data['slot'])
-            sform=SlotForm(request.POST,initial={'slot':slot,'date':dt})
-            return render(request,'updateslot.html',{'form':sform,'date':dt,'error':'slot was booked already'})
-        except:
-            data=Slot.objects.filter(email=request.session['email'],date=dt)
-            data.update(date=sform.data['date'],slot=sform.data['slot'])
-            return redirect('slotslist')
+        data=Slot.objects.filter(email=request.session['email'],date=dt)
+        data.update(date=sform.data['date'],slot=sform.data['slot'])
+        return redirect('slotslist')
     slot=request.POST.get('slot')
     print(dt,"  ",slot)
     sform=SlotForm(request.POST,initial={'slot':slot,'date':dt})

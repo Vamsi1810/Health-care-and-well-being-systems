@@ -35,109 +35,109 @@
 	</div>
 
 	<div class="col-md-6 offset-md-3 my-5">
-			<div class="card">
-				<div class="card-body pb-0 text-center">
-					<h2 class="text-success">Monthly orders</h2>
-					<hr>
-				</div>
-				<div class="card-body">
-					<canvas id="myChart"></canvas>
-					<script type="text/javascript">
-						var ctx = document.getElementById('myChart').getContext('2d');
-						data1={{ data1 | safe }}
-						data2={{ data2| safe}}
-						var myChart = new Chart(ctx, {
-							type: 'bar',
-							data: {
-								labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'sep', 'oct', 'Nov', 'Dec'],
-								datasets: [{
-									label: 'Monthly Expenses',
-									data: data1,
-									backgroundColor: [
-										'rgba(255, 99, 132)',
-										'rgba(255, 99, 132)',
-										'rgba(255, 99, 132)',
-										'rgba(255, 99, 132)',
-										'rgba(255, 99, 132)',
-										'rgba(255, 99, 132)',
-										'rgba(255, 99, 132)',
-										'rgba(255, 99, 132)',
-										'rgba(255, 99, 132)',
-										'rgba(255, 99, 132)',
-										'rgba(255, 99, 132)',
-										'rgba(255, 99, 132)',
-										// 'rgba(54, 162, 235)',
-										// 'rgba(255, 206, 86)',
-										// 'rgba(75, 192, 192)',
-										// 'rgba(153, 102, 255)',
-										// 'rgba(255, 159, 64)',
-										// 'rgba(255, 99, 132)',
-										// 'rgba(54, 162, 235)',
-										// 'rgba(255, 206, 86)',
-										// 'rgba(75, 192, 192)',
-										// 'rgba(153, 102, 255)',
-										// 'rgba(255, 159, 64,0.8)',
-		
-									],
-									borderWidth: 1
-								}]
-							},
-							options: {
-								scales: {
-									y: {
-										beginAtZero: true
-									}
-								},
-		
-							}
-						});
-					</script>
-				</div>
+		<div class="card ">
+			<div class="card-body pb-0 text-center">
+				<h2 class="text-success">Monthly orders</h2>
+				<hr>
 			</div>
-			<br>
-			<div class="card">
-				<div class="card-body pb-0 text-center">
-					<h2 class="text-success">Doctor consultations</h2>
-					<hr>
-				</div>
-				<div class="card-body">
-					<canvas id="myChar"></canvas>
-					<script type="text/javascript">
-						var ctx = document.getElementById('myChar').getContext('2d');
-						var myChart = new Chart(ctx, {
-							type: 'line',
-							data: {
-								labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'sep', 'oct', 'Nov', 'Dec'],
-								datasets: [{
-									label: 'Doctor consultations', data: data2,
-									backgroundColor: [
-										'rgba(54, 162, 235)',
-										'rgba(255, 206, 86)',
-										'rgba(75, 192, 192)',
-										'rgba(153, 102, 255)',
-										'rgba(255, 159, 64)',
-										'rgba(255, 99, 132)',
-										'rgba(54, 162, 235)',
-										'rgba(255, 206, 86)',
-										'rgba(75, 192, 192)',
-										'rgba(153, 102, 255)',
-										'rgba(255, 159, 64,0.8)',
-									],
-									borderWidth: 1
-								}]
+			<div class="card-body">
+				<canvas id="myChart"></canvas>
+				<script type="text/javascript">
+					var ctx = document.getElementById('myChart').getContext('2d');
+					data1={{ data1 | safe }}
+					data2={{ data2| safe}}
+					var myChart = new Chart(ctx, {
+						type: 'bar',
+						data: {
+							labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'sep', 'oct', 'Nov', 'Dec'],
+							datasets: [{
+								label: 'Monthly Expenses',
+								data: data1,
+								backgroundColor: [
+									'rgba(255, 99, 132)',
+									'rgba(255, 99, 132)',
+									'rgba(255, 99, 132)',
+									'rgba(255, 99, 132)',
+									'rgba(255, 99, 132)',
+									'rgba(255, 99, 132)',
+									'rgba(255, 99, 132)',
+									'rgba(255, 99, 132)',
+									'rgba(255, 99, 132)',
+									'rgba(255, 99, 132)',
+									'rgba(255, 99, 132)',
+									'rgba(255, 99, 132)',
+									// 'rgba(54, 162, 235)',
+									// 'rgba(255, 206, 86)',
+									// 'rgba(75, 192, 192)',
+									// 'rgba(153, 102, 255)',
+									// 'rgba(255, 159, 64)',
+									// 'rgba(255, 99, 132)',
+									// 'rgba(54, 162, 235)',
+									// 'rgba(255, 206, 86)',
+									// 'rgba(75, 192, 192)',
+									// 'rgba(153, 102, 255)',
+									// 'rgba(255, 159, 64,0.8)',
+	
+								],
+								borderWidth: 1
+							}]
+						},
+						options: {
+							scales: {
+								y: {
+									beginAtZero: true
+								}
 							},
-							options: {
-								scales: {
-									y: {
-										beginAtZero: true
-									}
-								},
-		
-							}
-						});
-					</script>
-				</div>
-	    </div>
+	
+						}
+					});
+				</script>
+			</div>
+		</div>
+		<br>
+		<div class="card ">
+			<div class="card-body pb-0 text-center">
+				<h2 class="text-success">Doctor consultations</h2>
+				<hr>
+			</div>
+			<div class="card-body">
+				<canvas id="myChar"></canvas>
+				<script type="text/javascript">
+					var ctx = document.getElementById('myChar').getContext('2d');
+					var myChart = new Chart(ctx, {
+						type: 'line',
+						data: {
+							labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'sep', 'oct', 'Nov', 'Dec'],
+							datasets: [{
+								label: 'Doctor consultations', data: data2,
+								backgroundColor: [
+									'rgba(54, 162, 235)',
+									'rgba(255, 206, 86)',
+									'rgba(75, 192, 192)',
+									'rgba(153, 102, 255)',
+									'rgba(255, 159, 64)',
+									'rgba(255, 99, 132)',
+									'rgba(54, 162, 235)',
+									'rgba(255, 206, 86)',
+									'rgba(75, 192, 192)',
+									'rgba(153, 102, 255)',
+									'rgba(255, 159, 64,0.8)',
+								],
+								borderWidth: 1
+							}]
+						},
+						options: {
+							scales: {
+								y: {
+									beginAtZero: true
+								}
+							},
+	
+						}
+					});
+				</script>
+			</div>
+		</div>
 	
 	</div>
 
